@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Labo4</string>
+    <string name="movie_name_string">Movie name</string>
+    <string name="movie_tittle">Movie tittle</string>
+    <string name="rate_ex">rate ex</string>
+    <string name="lorem_30_string">lorem 30 string</string>
+    <string name="runtime_ex_movie">runtime_ex_movie</string>
+</resources>
