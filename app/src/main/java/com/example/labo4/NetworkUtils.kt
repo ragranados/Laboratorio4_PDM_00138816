@@ -15,7 +15,7 @@ class NetworkUtility() {
 
     val URL_TOKEN: String = "a81a002e"
 
-    fun buildUrl(movieName: String): URL {
+    fun buildUrl(movieName: String?): URL {
         val builtUri = Uri.parse(BASE_URL)
                 .buildUpon()
                 .appendQueryParameter("apikey", URL_TOKEN)

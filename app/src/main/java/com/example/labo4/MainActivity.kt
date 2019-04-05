@@ -1,10 +1,12 @@
 package com.example.labo4
 
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +30,22 @@ class MainActivity : AppCompatActivity() {
             //adapter
         }
 
+
+    }
+
+    private inner class fetchMovie: AsyncTask<String, Void, String>(){
+        override fun doInBackground(vararg params: String?): String? {
+            if(params.isNullOrEmpty()) return ""
+
+            val movieName = params[0]
+            val movieUrl = NetworkUtility().buildUrl(movieName)
+
+            return try {
+                NetworkUtility().getResponseFromHttpUrl(movieUrl)
+            }catch (e: IOException){
+                ""
+            }
+        }
 
     }
 }
